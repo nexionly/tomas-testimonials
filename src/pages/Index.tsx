@@ -1,6 +1,8 @@
 
 import { TestimonialGrid } from "@/components/TestimonialGrid";
 import { Avatar } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Linkedin } from "lucide-react";
 
 const Index = () => {
   return (
@@ -18,6 +20,16 @@ const Index = () => {
         <h1 className="text-3xl md:text-4xl font-light text-center text-testimonial-text animate-fade-in">
           What people say about Tomas
         </h1>
+        <div className="mt-6 animate-fade-in" style={{ animationDelay: '300ms' }}>
+          <Button
+            variant="secondary"
+            className="gap-2 bg-white hover:bg-gray-50 text-blue-600 font-medium shadow-md"
+            onClick={() => window.open('https://www.linkedin.com/in/tomaswilliamsa/', '_blank')}
+          >
+            <Linkedin className="w-5 h-5" />
+            Connect on LinkedIn
+          </Button>
+        </div>
       </div>
       <TestimonialGrid />
     </div>
