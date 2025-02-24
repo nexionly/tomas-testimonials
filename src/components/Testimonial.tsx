@@ -8,7 +8,7 @@ interface TestimonialProps {
   author: string;
   role: string;
   className?: string;
-  isVisible?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const Testimonial = ({
@@ -16,21 +16,21 @@ export const Testimonial = ({
   author,
   role,
   className,
-  isVisible = true,
+  style,
 }: TestimonialProps) => {
   return (
     <Card
       className={cn(
-        "relative p-8 rounded-2xl bg-testimonial-bg text-testimonial-text max-w-3xl mx-auto transition-all duration-500",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+        "relative p-6 rounded-2xl bg-testimonial-bg text-testimonial-text hover:shadow-lg transition-all duration-300 flex flex-col",
         className
       )}
+      style={style}
     >
-      <div className="space-y-4">
-        <p className="text-xl md:text-2xl font-light italic leading-relaxed">
+      <div className="flex flex-col h-full">
+        <p className="text-lg font-light italic leading-relaxed mb-4 flex-grow">
           {quote}
         </p>
-        <div className="space-y-1">
+        <div className="space-y-1 mt-auto">
           <p className="font-medium text-lg">{author}</p>
           <p className="text-sm opacity-80">{role}</p>
         </div>
