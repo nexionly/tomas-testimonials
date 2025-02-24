@@ -21,7 +21,7 @@ export const Testimonial = ({
   return (
     <Card
       className={cn(
-        "relative p-6 rounded-2xl bg-testimonial-bg text-testimonial-text hover:shadow-lg transition-all duration-300 flex flex-col",
+        "relative p-6 rounded-2xl bg-white text-testimonial-text hover:shadow-xl transition-all duration-300 flex flex-col border-2 border-pink-100 shadow-md",
         className
       )}
       style={style}
@@ -30,7 +30,7 @@ export const Testimonial = ({
         <p className="text-lg font-light italic leading-relaxed mb-4 flex-grow">
           {quote}
         </p>
-        <div className="space-y-1 mt-auto">
+        <div className="space-y-1 mt-auto pt-4 border-t border-pink-100">
           <p className="font-medium text-lg">{author}</p>
           <p className="text-sm opacity-80">{role}</p>
         </div>
