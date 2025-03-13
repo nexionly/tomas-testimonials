@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "./", // Ensure base URL is set for GitHub Pages
+  base: "./", // Ensure base URL is set correctly for GitHub Pages
   plugins: [
     react(),
     mode === 'development' &&
@@ -19,6 +19,17 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    assetsInlineLimit: 4096, // 4kb
+    // Ensure asset URLs are correctly generated for GitHub Pages
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
     },
   },
 }));
