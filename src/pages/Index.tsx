@@ -32,15 +32,6 @@ const Index = () => {
                   <Linkedin className="w-5 h-5" />
                   Connect on LinkedIn
                 </Button>
-                
-                <Button
-                  variant="outline"
-                  className="gap-2 border-purple-200 bg-white/70 backdrop-blur-sm text-purple-600 hover:bg-purple-50 font-montserrat"
-                  onClick={() => window.open('mailto:contact@example.com')}
-                >
-                  <Mail className="w-5 h-5" />
-                  Contact Me
-                </Button>
               </div>
             </div>
             
