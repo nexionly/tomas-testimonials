@@ -11,6 +11,8 @@ export default defineConfig(({ mode }) => {
     ? `/${process.env.BASE_URL || ''}/` 
     : '/';
     
+  console.log(`Building with base: ${base}`);
+    
   return {
     server: {
       host: "::",
@@ -31,7 +33,6 @@ export default defineConfig(({ mode }) => {
       outDir: "dist",
       assetsDir: "assets",
       assetsInlineLimit: 4096, // 4kb
-      // Ensure asset URLs are correctly generated
       rollupOptions: {
         output: {
           manualChunks: undefined,
