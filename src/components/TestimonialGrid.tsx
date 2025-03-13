@@ -52,7 +52,7 @@ const testimonials = [
 
 export const TestimonialGrid = () => {
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-8 space-y-8">
+    <div className="max-w-4xl mx-auto px-4 md:px-8 space-y-8">
       {testimonials.map((testimonial, index) => (
         <Testimonial
           key={index}
