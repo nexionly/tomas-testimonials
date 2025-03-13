@@ -5,31 +5,38 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  base: "./", // Ensure base URL is set correctly for GitHub Pages
-  plugins: [
-    react(),
-    mode === 'development' &&
-    componentTagger(),
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+export default defineConfig(({ mode }) => {
+  // Determine the base path - empty for development, repo name for production
+  const base = mode === 'production' 
+    ? `/${process.env.BASE_URL || ''}/` 
+    : '/';
+    
+  return {
+    server: {
+      host: "::",
+      port: 8080,
     },
-  },
-  build: {
-    outDir: "dist",
-    assetsDir: "assets",
-    assetsInlineLimit: 4096, // 4kb
-    // Ensure asset URLs are correctly generated for GitHub Pages
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
+    base: base,
+    plugins: [
+      react(),
+      mode === 'development' &&
+      componentTagger(),
+    ].filter(Boolean),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
       },
     },
-  },
-}));
+    build: {
+      outDir: "dist",
+      assetsDir: "assets",
+      assetsInlineLimit: 4096, // 4kb
+      // Ensure asset URLs are correctly generated
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
+    },
+  }
+});
