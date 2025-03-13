@@ -52,12 +52,12 @@ const testimonials = [
 
 export const TestimonialGrid = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <div className="max-w-3xl mx-auto px-4 md:px-8 space-y-8">
       {testimonials.map((testimonial, index) => (
         <Testimonial
           key={index}
           {...testimonial}
-          className="h-full animate-fade-in"
+          className="animate-fade-in"
           style={{ 
             animationDelay: `${index * 120}ms`,
             animationFillMode: 'both',

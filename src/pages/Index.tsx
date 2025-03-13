@@ -20,7 +20,7 @@ const Index = () => {
               </h1>
               
               <p className="text-xl text-gray-700 max-w-2xl font-montserrat font-light">
-                Words from colleagues and clients that have worked with me over the years
+                I thought I'd share some of the feedback I've received from my colleagues, the people who really know what it's like to work with me day-to-day.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -56,9 +56,6 @@ const Index = () => {
       <div className="pt-4 pb-20">
         <div className="container mx-auto px-6 mb-12">
           <h2 className="text-3xl font-semibold text-center font-playfair text-gray-800 mb-4">Testimonials</h2>
-          <p className="text-center text-gray-600 font-montserrat max-w-2xl mx-auto">
-            Here's what colleagues and clients have to say about working with me
-          </p>
         </div>
         
         <TestimonialGrid />
