@@ -50,7 +50,7 @@ const Index = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-float"></div>
                 <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-b from-purple-100 to-pink-100">
                   <img
-                    src="/lovable-uploads/3360f130-d3b1-4198-82ae-66378c7e01e2.png"
+                    src="./lovable-uploads/3360f130-d3b1-4198-82ae-66378c7e01e2.png"
                     alt="Tomas"
                     className="object-cover w-full h-full"
                   />
