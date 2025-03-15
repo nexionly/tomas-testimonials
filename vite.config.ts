@@ -6,12 +6,17 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  // Get repo name from environment variable for GitHub Pages
+  const repoName = process.env.BASE_URL || '';
+  
   // Determine the base path - empty for development, repo name for production
-  const base = mode === 'production' 
-    ? `/${process.env.BASE_URL || ''}/` 
+  const base = mode === 'production' && repoName 
+    ? `/${repoName}/` 
     : '/';
     
   console.log(`Building with base: ${base}`);
+  console.log(`Mode: ${mode}`);
+  console.log(`Repo name from env: ${repoName}`);
     
   return {
     server: {
@@ -31,6 +36,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       outDir: "dist",
+      sourcemap: true,
     },
   }
 });

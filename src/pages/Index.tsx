@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin, Mail, Twitter } from "lucide-react";
 
 const Index = () => {
+  // Helper function to get correct image paths regardless of base URL
+  const getImagePath = (path: string) => {
+    // For absolute URLs, return as is
+    if (path.startsWith('http')) return path;
+    // Remove leading ./ if present
+    const cleanPath = path.startsWith('./') ? path.substring(2) : path;
+    return cleanPath;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100">
       {/* Hero Section */}
@@ -41,7 +50,7 @@ const Index = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-float"></div>
                 <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gradient-to-b from-purple-100 to-pink-100">
                   <img
-                    src="./lovable-uploads/3360f130-d3b1-4198-82ae-66378c7e01e2.png"
+                    src={getImagePath("lovable-uploads/3360f130-d3b1-4198-82ae-66378c7e01e2.png")}
                     alt="Tomas"
                     className="object-cover w-full h-full"
                   />

@@ -27,16 +27,25 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "18"
           cache: 'npm'
           
       - name: Install dependencies
         run: npm ci
         
+      - name: Set repository name
+        run: echo "REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)" >> $GITHUB_ENV
+        
       - name: Build project
         run: npm run build
         env:
-          BASE_URL: ${{ github.event.repository.name }}
+          BASE_URL: ${{ env.REPO_NAME }}
+          
+      - name: Debug build output
+        run: |
+          echo "Repository name: ${{ env.REPO_NAME }}"
+          echo "BASE_URL: ${{ env.REPO_NAME }}"
+          ls -la dist
         
       - name: Setup Pages
         id: pages
