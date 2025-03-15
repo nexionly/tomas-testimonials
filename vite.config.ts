@@ -31,13 +31,6 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       outDir: "dist",
-      assetsDir: "assets",
-      assetsInlineLimit: 4096, // 4kb
-      rollupOptions: {
-        output: {
-          manualChunks: undefined,
-        },
-      },
     },
   }
 });
