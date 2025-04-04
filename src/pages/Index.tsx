@@ -62,9 +62,15 @@ const Index = () => {
       </div>
       
       {/* Testimonial Section */}
-      <div className="pt-4 pb-20">
+      <div className="py-16 pb-24">
         <div className="container mx-auto px-6 mb-12">
-          <h2 className="text-3xl font-semibold text-center font-playfair text-gray-800 mb-4">Testimonials</h2>
+          <h2 className="text-3xl font-semibold text-center font-playfair text-gray-800 mb-8">
+            Testimonials
+            <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded mx-auto mt-4"></div>
+          </h2>
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 font-montserrat">
+            These testimonials reflect my collaborative approach and dedication to exceptional customer experiences.
+          </p>
         </div>
         
         <TestimonialGrid />
