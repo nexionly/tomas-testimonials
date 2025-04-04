@@ -29,7 +29,7 @@ const Index = () => {
               </h1>
               
               <p className="text-xl text-gray-700 max-w-2xl font-montserrat font-light">
-                I thought I'd share some of the feedback I've received from my colleagues, the people who really know what it's like to work with me day-to-day.
+                Below, you'll find feedback I've received from my colleagues.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
